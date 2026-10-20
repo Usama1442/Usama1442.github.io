@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Usama Gohar | AWS DevOps Engineer</title>
+<meta name="description" content="AWS DevOps engineer: EC2, S3, RDS, Docker, Terraform, CI/CD. Project case studies and contact.">
+<style>
+:root{--bg:#f7f8fa;--card:#fff;--text:#14181f;--muted:#5b6574;--line:#e2e6ec;--accent:#0f6fff;--chip:#eaf1ff;--chipt:#0b4fb8;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1117;--card:#161b24;--text:#e8ecf2;--muted:#9aa5b5;--line:#252c38;--accent:#5b9bff;--chip:#1b2a45;--chipt:#9cc2ff;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e1117;--card:#161b24;--text:#e8ecf2;--muted:#9aa5b5;--line:#252c38;--accent:#5b9bff;--chip:#1b2a45;--chipt:#9cc2ff;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.wrap{max-width:920px;margin:0 auto;padding:0 20px}
+nav{display:flex;gap:18px;padding:18px 0;font-size:15px;flex-wrap:wrap}
+nav a{color:var(--muted);text-decoration:none;font-weight:600}nav a:hover{color:var(--accent)}
+header{padding:40px 0 28px}
+.tag{color:var(--accent);font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+h1{font-size:clamp(34px,6vw,54px);line-height:1.08;margin:8px 0 14px}
+.lead{color:var(--muted);max-width:660px;font-size:18px;margin:0}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.btn{padding:10px 18px;border-radius:10px;border:1px solid var(--line);color:var(--text);text-decoration:none;font-weight:600;background:var(--card)}
+.btn.p{background:var(--accent);border-color:var(--accent);color:#fff}
+section{padding:30px 0}
+h2{font-size:26px;margin:0 0 18px}
+.case{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;margin-bottom:20px}
+.case h3{margin:0 0 4px;font-size:22px}
+.case .sub{color:var(--muted);margin:0 0 16px}
+.case h4{margin:16px 0 4px;font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--accent)}
+.case p,.case li{font-size:15.5px;margin:0 0 6px}
+.case ul{padding-left:20px;margin:0}
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:8px 0 4px;overflow-x:auto}
+.flow span{background:var(--chip);color:var(--chipt);padding:5px 11px;border-radius:8px;font-size:13.5px;font-weight:600;white-space:nowrap}
+.flow i{color:var(--muted);font-style:normal}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0}
+.chip{background:var(--chip);color:var(--chipt);border-radius:999px;padding:3px 11px;font-size:13px;font-weight:600}
+.case a.l{color:var(--accent);font-weight:700;text-decoration:none}
+.note{color:var(--muted);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.box h3{margin:0 0 8px;font-size:16px}
+.box p{margin:0;color:var(--muted);font-size:14.5px}
+footer{padding:34px 0 60px;border-top:1px solid var(--line);margin-top:20px;color:var(--muted);font-size:14px}
+footer a{color:var(--accent);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><a href="#projects">Projects</a><a href="#aws">AWS</a><a href="#services">Services</a><a href="#contact">Contact</a></nav>
+
+<header>
+<div class="tag">AWS DevOps Engineer · Islamabad, Pakistan</div>
+<h1>I deploy and automate apps on AWS.</h1>
+<p class="lead">I work with EC2, S3, VPC and RDS, containerize apps with Docker, provision infrastructure with Terraform, and build CI/CD pipelines. I also shut down what I build, so there are no surprise bills.</p>
+<div class="btns">
+<a class="btn p" href="#contact">Hire me</a>
+<a class="btn" href="https://github.com/Usama1442">GitHub</a>
+<a class="btn" href="https://linkedin.com/in/usama-gohar-a33a35339">LinkedIn</a>
+</div>
+</header>
+
+<section id="projects">
+<h2>Projects</h2>
+
+<article class="case">
+<h3>OpsPulse Health Monitor</h3>
+<p class="sub">A monitoring app deployed on AWS with Terraform.</p>
+<h4>The problem</h4>
+<p>Servers need a simple way to report whether they are healthy, for people, load balancers and monitoring tools.</p>
+<h4>What I built</h4>
+<ul>
+<li>A Flask dashboard with live CPU, memory, disk and uptime</li>
+<li>/health and /ready endpoints for probes, and a Prometheus-format /metrics endpoint</li>
+<li>Unit tests, plus Dockerfile and Docker Compose setup</li>
+<li>Terraform code that creates an AWS EC2 instance and security group; Nginx and Gunicorn serve the app</li>
+</ul>
+<div class="flow"><span>Terraform</span><i>→</i><span>AWS EC2</span><i>→</i><span>Nginx</span><i>→</i><span>Gunicorn</span><i>→</i><span>Flask app</span></div>
+<h4>What I learned</h4>
+<p>Infrastructure as code makes deployment repeatable, and destroying resources after testing is as important as creating them.</p>
+<div class="chips"><span class="chip">AWS EC2</span><span class="chip">Terraform</span><span class="chip">Nginx</span><span class="chip">Gunicorn</span><span class="chip">Docker</span><span class="chip">Linux</span></div>
+<p class="note">Deployed, verified in the browser, then destroyed to avoid cost. Screenshots are in the repository.</p>
+<a class="l" href="https://github.com/Usama1442/opspulse-health-monitor">View source on GitHub →</a>
+</article>
+
+<article class="case">
+<h3>CI/CD Pipeline to Kubernetes</h3>
+<p class="sub">From a code push to an app running on Kubernetes.</p>
+<h4>The problem</h4>
+<p>Building and publishing images by hand is slow and easy to get wrong.</p>
+<h4>What I built</h4>
+<ul>
+<li>A GitHub Actions workflow that builds a Docker image on every push and publishes it to GHCR</li>
+<li>Kubernetes (k3s) on AWS EC2 running the app with 2 replicas behind a NodePort service</li>
+<li>Ansible to automate server configuration</li>
+</ul>
+<div class="flow"><span>GitHub</span><i>→</i><span>GitHub Actions</span><i>→</i><span>Docker build</span><i>→</i><span>GHCR</span><i>→</i><span>k3s</span><i>→</i><span>AWS EC2</span></div>
+<h4>What I learned</h4>
+<p>How each tool fits into one workflow: automating build and publish, running workloads on Kubernetes, and configuring servers with Ansible.</p>
+<div class="chips"><span class="chip">GitHub Actions</span><span class="chip">Docker</span><span class="chip">GHCR</span><span class="chip">Kubernetes (k3s)</span><span class="chip">Ansible</span><span class="chip">AWS EC2</span></div>
+<a class="l" href="https://github.com/Usama1442/devops-mini-project">View source on GitHub →</a>
+</article>
+
+<article class="case">
+<h3>Containerized WordPress</h3>
+<p class="sub">A WordPress website running in Docker containers.</p>
+<div class="chips"><span class="chip">Docker</span><span class="chip">WordPress</span></div>
+</article>
+</section>
+
+<section id="aws">
+<h2>AWS experience</h2>
+<div class="grid">
+<div class="box"><h3>Hands-on</h3><p>EC2, S3, VPC networking, RDS. Terraform to provision EC2 and security groups.</p></div>
+<div class="box"><h3>Coursework (AWS Cloud Architect)</h3><p>IAM, ELB, Auto Scaling, EBS, DynamoDB, CloudWatch, Trusted Advisor, Route 53, CloudFront, Lambda, SQS/SNS, CloudFormation, ECS/EKS, KMS.</p></div>
+<div class="box"><h3>Currently learning</h3><p>Jenkins, Prometheus + Grafana, and verifying Docker and Kubernetes setups end to end.</p></div>
+</div>
+</section>
+
+<section id="services">
+<h2>How I can help</h2>
+<div class="grid">
+<div class="box"><h3>Deploy on AWS</h3><p>Get your app running on EC2 with S3, VPC networking and RDS.</p></div>
+<div class="box"><h3>Dockerize</h3><p>Containerize your app with Docker and Docker Compose.</p></div>
+<div class="box"><h3>CI/CD</h3><p>Automated build and publish pipelines with GitHub Actions.</p></div>
+<div class="box"><h3>Infrastructure as code</h3><p>Repeatable AWS setups with Terraform.</p></div>
+<div class="box"><h3>Linux servers</h3><p>Nginx and Gunicorn reverse proxy setup and configuration.</p></div>
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<div class="box">
+<p>Tell me what you need deployed or automated and I'll reply with a clear plan.</p>
+<div class="btns">
+<a class="btn p" href="mailto:usamagohar145@gmail.com">usamagohar145@gmail.com</a>
+<a class="btn" href="https://linkedin.com/in/usama-gohar-a33a35339">LinkedIn</a>
+<a class="btn" href="https://github.com/Usama1442">GitHub</a>
+</div>
+</div>
+</section>
+
+<footer>© Usama Gohar · BS Software Engineering, University of Haripur · <a href="https://github.com/Usama1442">GitHub</a></footer>
+</div>
+</body>
+</html>
